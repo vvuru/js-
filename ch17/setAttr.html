@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{width:500px; height:300px;}
+    #main > img{width:100%; height:100%;}
+    #sub{width:500px; height:100px; display:flex;}
+    #sub > img{flex-grow:1;}
+</style>
+<body>
+<div id="main">
+    <img src="https://i.picsum.photos/id/52/200/300.jpg?grayscale&hmac=vrgcHGvhD_zWDvlpmNUwfzxnKdl-77iuTAJ2UwxuVg0" id="mainImg" >
+</div>
+<div id="sub">
+    <img src="https://i.picsum.photos/id/52/200/300.jpg?grayscale&hmac=vrgcHGvhD_zWDvlpmNUwfzxnKdl-77iuTAJ2UwxuVg0" onclick="changePic(event);"  >
+    <img src="https://i.picsum.photos/id/249/200/300.jpg?blur=5&hmac=06fhaEwJgPW4lIaoOMTjO3JlzaiXw3Xx7dQ0y6pWcq0" onclick="changePic(event);"  >
+    <img src="https://i.picsum.photos/id/806/200/300.jpg?hmac=IA-MNmLr1ua-cWJTayRkIMVB9ZU-DrSrJUB_8gi-Xpw" onclick="changePic(event);" >
+</div> 
+    <script>
+        // const oldPic = document.querySelector("#mainImg");
+
+        // function changePic(e) {
+        //     //누구의 무엇을 어떤값으로
+        //     // dog.src = 'https://picsum.photos/200/300?grayscale';
+        //     // console.log('dog.src');
+
+        //     oldPic.src=e.target.src;
+        // }
+
+        const imgMain=document.querySelector('#main > img');
+        const subImgs=document.querySelectorAll('#sub > img');
+
+        subImgs.forEach(item=>{
+            item.onclick=function(){
+                imgMain.src=this.src;
+                // () => {} 일때는 this말고 클로저?(item.src)
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://i.picsum.photos/id/384/200/200.jpg?hmac=TAsUnIQnfLj13hjjp8604_rXNHrqCGlB2K8UQoWt1aM" alt="" id="water">
+
+    <script>
+        const imgWater=document.querySelector('#water');
+        imgWater.onclick=function(e){
+            console.log(`이벤트유형: ${e.type}, 발생위치: ${e.pageX},${e.pageY}`);
+            console.log(e.altKey);
+            console.log(e.target);
+        }
+    </script>
+</body>
+</html>

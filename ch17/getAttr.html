@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="prod-pic">
+        <img src="https://picsum.photos/id/237/200/300" alt="멍멍" id="dog" width="200" height="200"
+            onclick="displaySrc();" abc="헤헤">
+    </div>
+    <button onclick="changePic();">이미지 바꾸기</button>
+    <script>
+
+        const dog = document.querySelector("#dog");
+
+        function changePic() {
+            //누구의 무엇을 어떤값으로
+            // dog.src = 'https://picsum.photos/200/300?grayscale';
+            // console.log('dog.src');
+
+            dog.setAttribute('src','https://picsum.photos/200/300?grayscale');  
+        }
+        
+        function displaySrc() {
+
+            console.log("getAttr: " + dog.getAttribute("abc"));
+            console.log(".src: " + dog.src);
+            console.log(".alt: " + dog.alt);
+            console.log(".id: " + dog.id);
+            console.log(".width: " + dog.width);
+            console.log(".height: " + dog.height);
+            console.log(".onclick: " + dog.onclick);
+            console.log(".abc: " + dog.abc);
+        }
+    </script>
+</body>
+
+</html>
