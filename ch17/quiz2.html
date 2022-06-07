@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='number']{width:50px;}
+        table{border: 1px solid #333333;}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" name="" id="rowNum">행
+        <input type="text" name="" id="colNum">열
+        <button onclick="tbl();">작성</button>
+
+        <!-- <table>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table> -->
+    </div>
+    <div id="result"></div>
+    <script>
+        function tbl() {
+            const result=document.querySelector('#result');
+
+            const rowVal=document.querySelector('#rowNum');
+            const colVal=document.querySelector('#colNum');
+            const tblRow=rowVal.value;
+            const tblCol=colVal.value;
+
+            const newTable=document.createElement('table');
+
+            const resultTable=result.appendChild(newTable);
+
+            for(let i=0;i<tblRow;i++){
+                const newRow=document.createElement('tr');
+                const rowCol=resultTable.appendChild(newRow);
+                for(let j=0;j<tblCol;j++){
+                    const newCol=document.createElement('td');
+                    rowCol.appendChild(newCol);
+                    // document.write(`<td>(${i},${j})</td>`);
+                    newCol.innerText=`(${i},${j})`;
+                };
+            };
+        };
+    </script>
+</body>
+</html>

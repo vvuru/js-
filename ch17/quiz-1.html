@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{list-style-type: none;};
+        /* text-decoration:line-through;" */
+        .check{cursor:pointer;}
+        .checked{color:#ccc; text-decoration: line-through;}
+    </style>
+</head>
+<body>
+    <h1>할일목록</h1>
+    <ul>
+        <li><span class="check">할일1</span></li>
+        <li><span class="check">할일2</span></li>
+        <li><span class="check">할일3</span></li>
+        <li><span class="check">할일4</span></li>
+        <li><span class="check">할일5</span></li>
+    </ul>
+
+    <script>
+        const spanCheck=document.querySelectorAll('.check');
+
+        // spanCheck.addEventListener('click',function(e){
+        //     e.target.style.textDecoration="line-through";
+        //     e.target.style.color="#ccc";
+        // });
+
+        spanCheck.forEach(item=>{
+            item.addEventListener('click',(e)=>{
+                e.target.classList.toggle('checked');
+            });
+            // item.onclick=function(e){
+                // e.target.style.textDecoration="line-through";
+                // e.target.style.color="#ccc";
+            // }
+        });
+    </script>
+</body>
+</html>
